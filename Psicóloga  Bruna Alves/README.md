@@ -7,28 +7,10 @@ Redesign completo com foco em **acolhimento, elegância e autoridade**, constru�
 sobre a paleta de marca da cliente. O conteúdo institucional foi 100% preservado;
 apenas a forma (UI/UX, performance, acessibilidade e SEO) foi elevada.
 
-## Stack
-
-- **Next.js 15** (App Router) + **React 19** + **TypeScript**
-- **Tailwind CSS v4** (tokens via `@theme`)
-- **shadcn/ui** (Button, Accordion) + **Radix UI**
-- **Framer Motion** (revelação ao rolar, stagger, microinterações)
-- **Lucide React** (ícones) + `next/font` (Playfair Display + Inter) + `next/image`
-
-## Como rodar
-
-```bash
-npm install
-npm run dev      # desenvolvimento  → http://localhost:3000
-npm run build    # build de produção
-npm run start    # servir o build
-```
-
 ## Design System
-
 Fonte única dos tokens: [`app/globals.css`](app/globals.css).
 
-### Paleta (obrigatória — definida pela cliente)
+### Paleta (— definida pela cliente)
 
 | Papel | Cor | HEX | Uso |
 |-------|-----|-----|-----|
@@ -39,17 +21,6 @@ Fonte única dos tokens: [`app/globals.css`](app/globals.css).
 Tons derivados (`--marsala-50…800`, `--castanho-50…900`, `--nude-50…400`) cobrem
 hover, active, disabled, gradientes, sombras, overlays e bordas — sempre dentro da
 mesma identidade. Contraste de texto validado para **WCAG AA**.
-
-### Tipografia — “Classic Elegant”
-
-- **Títulos:** Playfair Display (serif, elegante/editorial)
-- **Corpo & botões:** Inter
-
-### Tokens
-
-Raios (`--radius-sm…2xl`, cards em 18–24px), sombras quentes suaves
-(`--shadow-soft/md/lg/marsala`), espaçamento generoso e uma variante de vidro leve
-(`.glass`) para header e cards.
 
 ## Estrutura
 
@@ -74,20 +45,4 @@ public/img/         # imagens otimizadas via next/image
 legacy/             # protótipo estático original (referência)
 ```
 
-## Acessibilidade, SEO e Performance
 
-- **A11y:** foco visível, navegação por teclado, `aria-*`, skip-link, contraste AA,
-  `prefers-reduced-motion` respeitado.
-- **SEO:** metadata + Open Graph/Twitter, `sitemap.xml`, `robots.txt`, HTML semântico,
-  hierarquia de headings e dados estruturados JSON-LD (Psychologist + FAQPage).
-- **Performance:** `next/image` (AVIF/WebP, lazy), `next/font` (self-host),
-  code splitting via `next/dynamic`, página pré-renderizada estaticamente.
-
-## Deploy (Vercel)
-
-O projeto é detectado automaticamente como Next.js.
-
-```bash
-npx vercel          # preview
-npx vercel --prod   # produção
-```
