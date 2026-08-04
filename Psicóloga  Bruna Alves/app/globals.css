@@ -1,0 +1,239 @@
+@import "tailwindcss";
+
+/* ============================================================
+   DESIGN SYSTEM — Bruna Alves · Psicóloga
+   Paleta obrigatória da cliente:
+   · Marsala   #955251  → primária, CTAs, links ativos, destaques
+   · Castanho  #6A4A38  → títulos, menu, footer, textos importantes
+   · Nude      #F3D9C1  → fundos, cards, seções, áreas de respiro
+   Tons derivados abaixo cobrem hover/active/disabled/gradients/
+   sombras/overlays/bordas — todos dentro da mesma identidade.
+   ============================================================ */
+:root {
+  /* Marca — Marsala */
+  --marsala-50: #f7ecec;
+  --marsala-100: #eed6d5;
+  --marsala-200: #dcaead;
+  --marsala-300: #c48584;
+  --marsala-400: #ad6a69;
+  --marsala: #955251; /* base */
+  --marsala-600: #834645;
+  --marsala-700: #6e3a39;
+  --marsala-800: #572d2c;
+
+  /* Marca — Castanho */
+  --castanho-50: #f2ece7;
+  --castanho-100: #e2d5cb;
+  --castanho-300: #b39c8a;
+  --castanho-500: #8a6a54;
+  --castanho: #6a4a38; /* base */
+  --castanho-700: #533a2c;
+  --castanho-800: #402d22;
+  --castanho-900: #2d2018;
+
+  /* Marca — Nude */
+  --nude-50: #fdf8f2;
+  --nude-100: #f9efe4;
+  --nude-200: #f3d9c1; /* base */
+  --nude-300: #ecc7a6;
+  --nude-400: #e0b189;
+
+  /* Papéis semânticos */
+  --background: var(--nude-50);
+  --surface: #fffdfb;
+  --surface-2: #fbf3ea;
+  --foreground: #2f231b; /* ink — contraste AAA sobre nude */
+  --muted: #7a6353; /* texto secundário — AA sobre nude-50 */
+  --border: #ecdcca;
+  --border-strong: #e0c8ad;
+
+  --primary: var(--marsala);
+  --primary-hover: var(--marsala-600);
+  --primary-active: var(--marsala-700);
+  --on-primary: #fffaf7;
+
+  --secondary: var(--castanho);
+  --heading: var(--castanho);
+  --ring: var(--marsala);
+
+  --success: #4f7d5f;
+  --warning: #b6803a;
+  --destructive: #b4453f;
+
+  /* Raios */
+  --radius-sm: 0.625rem; /* 10px */
+  --radius: 1rem; /* 16px */
+  --radius-lg: 1.25rem; /* 20px */
+  --radius-xl: 1.5rem; /* 24px */
+  --radius-2xl: 2rem; /* 32px */
+
+  /* Sombras suaves e quentes (base castanho) */
+  --shadow-xs: 0 1px 2px rgba(106, 74, 56, 0.06);
+  --shadow-soft: 0 4px 20px -6px rgba(106, 74, 56, 0.14);
+  --shadow-md: 0 12px 32px -12px rgba(106, 74, 56, 0.2);
+  --shadow-lg: 0 24px 60px -20px rgba(106, 74, 56, 0.26);
+  --shadow-marsala: 0 14px 34px -12px rgba(149, 82, 81, 0.45);
+}
+
+/* Tokens expostos ao Tailwind v4 */
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-active: var(--primary-active);
+  --color-on-primary: var(--on-primary);
+
+  --color-secondary: var(--secondary);
+  --color-heading: var(--heading);
+  --color-ring: var(--ring);
+
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-destructive: var(--destructive);
+
+  --color-marsala-50: var(--marsala-50);
+  --color-marsala-100: var(--marsala-100);
+  --color-marsala-200: var(--marsala-200);
+  --color-marsala-300: var(--marsala-300);
+  --color-marsala-400: var(--marsala-400);
+  --color-marsala: var(--marsala);
+  --color-marsala-600: var(--marsala-600);
+  --color-marsala-700: var(--marsala-700);
+  --color-marsala-800: var(--marsala-800);
+
+  --color-castanho-50: var(--castanho-50);
+  --color-castanho-100: var(--castanho-100);
+  --color-castanho-300: var(--castanho-300);
+  --color-castanho-500: var(--castanho-500);
+  --color-castanho: var(--castanho);
+  --color-castanho-700: var(--castanho-700);
+  --color-castanho-800: var(--castanho-800);
+  --color-castanho-900: var(--castanho-900);
+
+  --color-nude-50: var(--nude-50);
+  --color-nude-100: var(--nude-100);
+  --color-nude-200: var(--nude-200);
+  --color-nude-300: var(--nude-300);
+  --color-nude-400: var(--nude-400);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+  --radius-2xl: var(--radius-2xl);
+
+  --shadow-xs: var(--shadow-xs);
+  --shadow-soft: var(--shadow-soft);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-marsala: var(--shadow-marsala);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), Georgia, "Times New Roman", serif;
+
+  --breakpoint-xs: 24rem;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 5.5rem; /* compensa header fixo em âncoras */
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    color: var(--color-heading);
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Foco visível — acessibilidade (WCAG 2.4.7) */
+  :focus-visible {
+    outline: 3px solid var(--color-ring);
+    outline-offset: 3px;
+    border-radius: 8px;
+  }
+
+  ::selection {
+    background: var(--marsala-200);
+    color: var(--castanho-900);
+  }
+}
+
+/* Textura orgânica sutil de fundo — sensação de profundidade/leveza */
+.bg-grain {
+  background-image:
+    radial-gradient(60rem 60rem at 82% -8%, rgba(149, 82, 81, 0.10), transparent 60%),
+    radial-gradient(48rem 48rem at 4% 8%, rgba(243, 217, 193, 0.55), transparent 55%);
+}
+
+/* Gradiente de marca reutilizável */
+.text-gradient-marsala {
+  background: linear-gradient(120deg, var(--marsala), var(--castanho));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Vidro leve (glassmorphism) para header/cards quando fizer sentido */
+.glass {
+  background: color-mix(in srgb, var(--surface) 72%, transparent);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+}
+
+/* Animação do accordion (Radix) sem dependências extras */
+@keyframes accordion-down {
+  from { height: 0; opacity: 0; }
+  to { height: var(--radix-accordion-content-height); opacity: 1; }
+}
+@keyframes accordion-up {
+  from { height: var(--radix-accordion-content-height); opacity: 1; }
+  to { height: 0; opacity: 0; }
+}
+.animate-accordion-down { animation: accordion-down 0.28s ease-out; }
+.animate-accordion-up { animation: accordion-up 0.24s ease-in; }
+
+/* Brilho pulsante discreto do botão flutuante */
+@keyframes soft-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(149, 82, 81, 0.45); }
+  50% { box-shadow: 0 0 0 12px rgba(149, 82, 81, 0); }
+}
+.animate-soft-pulse { animation: soft-pulse 2.6s ease-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

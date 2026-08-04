@@ -1,0 +1,3 @@
+# Arquivos internos que NÃO vão para o deploy
+legacy
+.claude

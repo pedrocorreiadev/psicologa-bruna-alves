@@ -1,0 +1,93 @@
+# Bruna Alves — Psicóloga Clínica
+
+Site institucional premium (landing page) da psicóloga clínica **Bruna Alves** —
+Terapia Cognitivo-Comportamental (TCC), aplicadora ABA/DENVER e Neuropsicologia.
+
+Redesign completo com foco em **acolhimento, elegância e autoridade**, construído
+sobre a paleta de marca da cliente. O conteúdo institucional foi 100% preservado;
+apenas a forma (UI/UX, performance, acessibilidade e SEO) foi elevada.
+
+## Stack
+
+- **Next.js 15** (App Router) + **React 19** + **TypeScript**
+- **Tailwind CSS v4** (tokens via `@theme`)
+- **shadcn/ui** (Button, Accordion) + **Radix UI**
+- **Framer Motion** (revelação ao rolar, stagger, microinterações)
+- **Lucide React** (ícones) + `next/font` (Playfair Display + Inter) + `next/image`
+
+## Como rodar
+
+```bash
+npm install
+npm run dev      # desenvolvimento  → http://localhost:3000
+npm run build    # build de produção
+npm run start    # servir o build
+```
+
+## Design System
+
+Fonte única dos tokens: [`app/globals.css`](app/globals.css).
+
+### Paleta (obrigatória — definida pela cliente)
+
+| Papel | Cor | HEX | Uso |
+|-------|-----|-----|-----|
+| **Primária — Marsala** | 🟥 | `#955251` | CTAs, links ativos, destaques, ícones importantes |
+| **Secundária — Castanho** | 🟫 | `#6A4A38` | Títulos, menu, footer, textos importantes |
+| **Apoio — Nude** | 🟧 | `#F3D9C1` | Fundos, cards, seções, áreas de respiro |
+
+Tons derivados (`--marsala-50…800`, `--castanho-50…900`, `--nude-50…400`) cobrem
+hover, active, disabled, gradientes, sombras, overlays e bordas — sempre dentro da
+mesma identidade. Contraste de texto validado para **WCAG AA**.
+
+### Tipografia — “Classic Elegant”
+
+- **Títulos:** Playfair Display (serif, elegante/editorial)
+- **Corpo & botões:** Inter
+
+### Tokens
+
+Raios (`--radius-sm…2xl`, cards em 18–24px), sombras quentes suaves
+(`--shadow-soft/md/lg/marsala`), espaçamento generoso e uma variante de vidro leve
+(`.glass`) para header e cards.
+
+## Estrutura
+
+```
+app/
+  layout.tsx        # fontes, metadata/SEO, Open Graph, JSON-LD, skip-link
+  page.tsx          # composição das seções
+  globals.css       # design system (tokens, base, animações)
+  sitemap.ts, robots.ts
+components/
+  ui/               # primitivos shadcn (button, accordion)
+  primitives/       # reveal (motion), section-heading, icons, whatsapp-cta
+  layout/           # header, footer, brand, whatsapp-fab
+  sections/         # hero, trust-band, about, approaches, how-it-works,
+                    # modalities, testimonials, faq, final-cta
+  seo/              # json-ld (Psychologist + FAQPage)
+lib/
+  site.ts           # conteúdo institucional centralizado (single source)
+  motion.ts         # variantes Framer Motion
+  utils.ts          # cn()
+public/img/         # imagens otimizadas via next/image
+legacy/             # protótipo estático original (referência)
+```
+
+## Acessibilidade, SEO e Performance
+
+- **A11y:** foco visível, navegação por teclado, `aria-*`, skip-link, contraste AA,
+  `prefers-reduced-motion` respeitado.
+- **SEO:** metadata + Open Graph/Twitter, `sitemap.xml`, `robots.txt`, HTML semântico,
+  hierarquia de headings e dados estruturados JSON-LD (Psychologist + FAQPage).
+- **Performance:** `next/image` (AVIF/WebP, lazy), `next/font` (self-host),
+  code splitting via `next/dynamic`, página pré-renderizada estaticamente.
+
+## Deploy (Vercel)
+
+O projeto é detectado automaticamente como Next.js.
+
+```bash
+npx vercel          # preview
+npx vercel --prod   # produção
+```
