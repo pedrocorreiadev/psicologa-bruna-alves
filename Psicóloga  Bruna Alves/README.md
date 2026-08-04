@@ -15,26 +15,17 @@ apenas a forma (UI/UX, performance, acessibilidade e SEO) foi elevada.
 - **Framer Motion** (revelação ao rolar, stagger, microinterações)
 - **Lucide React** (ícones) + `next/font` (Playfair Display + Inter) + `next/image`
 
-## Como rodar
-
-```bash
-npm install
-npm run dev      # desenvolvimento  → http://localhost:3000
-npm run build    # build de produção
-npm run start    # servir o build
-```
-
 ## Design System
 
 Fonte única dos tokens: [`app/globals.css`](app/globals.css).
 
-### Paleta (obrigatória — definida pela cliente)
+### Paleta (definida pela cliente)
 
-| Papel | Cor | HEX | Uso |
-|-------|-----|-----|-----|
-| **Primária — Marsala** | 🟥 | `#955251` | CTAs, links ativos, destaques, ícones importantes |
-| **Secundária — Castanho** | 🟫 | `#6A4A38` | Títulos, menu, footer, textos importantes |
-| **Apoio — Nude** | 🟧 | `#F3D9C1` | Fundos, cards, seções, áreas de respiro |
+| Papel                     | Cor | HEX       | Uso                                               |
+| ------------------------- | --- | --------- | ------------------------------------------------- |
+| **Primária — Marsala**    | 🟥  | `#955251` | CTAs, links ativos, destaques, ícones importantes |
+| **Secundária — Castanho** | 🟫  | `#6A4A38` | Títulos, menu, footer, textos importantes         |
+| **Apoio — Nude**          | 🟧  | `#F3D9C1` | Fundos, cards, seções, áreas de respiro           |
 
 Tons derivados (`--marsala-50…800`, `--castanho-50…900`, `--nude-50…400`) cobrem
 hover, active, disabled, gradientes, sombras, overlays e bordas — sempre dentro da
@@ -82,12 +73,3 @@ legacy/             # protótipo estático original (referência)
   hierarquia de headings e dados estruturados JSON-LD (Psychologist + FAQPage).
 - **Performance:** `next/image` (AVIF/WebP, lazy), `next/font` (self-host),
   code splitting via `next/dynamic`, página pré-renderizada estaticamente.
-
-## Deploy (Vercel)
-
-O projeto é detectado automaticamente como Next.js.
-
-```bash
-npx vercel          # preview
-npx vercel --prod   # produção
-```
