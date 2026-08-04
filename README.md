@@ -15,20 +15,11 @@ apenas a forma (UI/UX, performance, acessibilidade e SEO) foi elevada.
 - **Framer Motion** (revelação ao rolar, stagger, microinterações)
 - **Lucide React** (ícones) + `next/font` (Playfair Display + Inter) + `next/image`
 
-## Como rodar
-
-```bash
-npm install
-npm run dev      # desenvolvimento  → http://localhost:3000
-npm run build    # build de produção
-npm run start    # servir o build
-```
-
 ## Design System
 
 Fonte única dos tokens: [`app/globals.css`](app/globals.css).
 
-### Paleta (obrigatória — definida pela cliente)
+### Paleta (definida pela cliente)
 
 | Papel | Cor | HEX | Uso |
 |-------|-----|-----|-----|
