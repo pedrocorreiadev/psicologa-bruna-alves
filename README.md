@@ -21,11 +21,11 @@ Fonte única dos tokens: [`app/globals.css`](app/globals.css).
 
 ### Paleta (definida pela cliente)
 
-| Papel | Cor | HEX | Uso |
-|-------|-----|-----|-----|
-| **Primária — Marsala** | 🟥 | `#955251` | CTAs, links ativos, destaques, ícones importantes |
-| **Secundária — Castanho** | 🟫 | `#6A4A38` | Títulos, menu, footer, textos importantes |
-| **Apoio — Nude** | 🟧 | `#F3D9C1` | Fundos, cards, seções, áreas de respiro |
+| Papel                     | Cor | HEX       | Uso                                               |
+| ------------------------- | --- | --------- | ------------------------------------------------- |
+| **Primária — Marsala**    | 🟥  | `#955251` | CTAs, links ativos, destaques, ícones importantes |
+| **Secundária — Castanho** | 🟫  | `#6A4A38` | Títulos, menu, footer, textos importantes         |
+| **Apoio — Nude**          | 🟧  | `#F3D9C1` | Fundos, cards, seções, áreas de respiro           |
 
 Tons derivados (`--marsala-50…800`, `--castanho-50…900`, `--nude-50…400`) cobrem
 hover, active, disabled, gradientes, sombras, overlays e bordas — sempre dentro da
@@ -73,7 +73,3 @@ legacy/             # protótipo estático original (referência)
   hierarquia de headings e dados estruturados JSON-LD (Psychologist + FAQPage).
 - **Performance:** `next/image` (AVIF/WebP, lazy), `next/font` (self-host),
   code splitting via `next/dynamic`, página pré-renderizada estaticamente.
-
-## Deploy (Vercel)
-
-
