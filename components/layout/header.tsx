@@ -122,7 +122,7 @@ export function Header() {
         {open && (
           <motion.div
             id="mobile-menu"
-            className="fixed inset-0 z-[70] md:hidden"
+            className="fixed inset-0 z-[70] md:hidden p-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -135,56 +135,58 @@ export function Header() {
               className="absolute inset-0 bg-black/35 backdrop-blur-[2px]"
             />
 
-            <motion.div
-              initial={{ opacity: 0, x: "100%" }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: "100%" }}
-              transition={{ duration: 0.24, ease: "easeOut" }}
-              onClick={(event) => event.stopPropagation()}
-              role="dialog"
-              aria-modal="true"
-              aria-label="Menu de navegação"
-              className="absolute inset-y-0 right-0 flex w-[88vw] max-w-sm flex-col border-l border-border bg-surface/95 p-3.5 shadow-2xl backdrop-blur-xl"
-            >
-              <div className="flex items-center justify-between pb-3">
-                <Brand />
-                <button
-                  ref={closeButtonRef}
-                  type="button"
-                  onClick={handleNavigate}
-                  aria-label="Fechar menu"
-                  className="grid size-10 place-items-center rounded-full border border-border text-secondary transition-colors hover:bg-marsala-50 hover:text-primary"
-                >
-                  <X className="size-5" />
-                </button>
-              </div>
+            <div className="relative flex min-h-full items-center justify-center">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.96, y: 10 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.96, y: 10 }}
+                transition={{ duration: 0.24, ease: "easeOut" }}
+                onClick={(event) => event.stopPropagation()}
+                role="dialog"
+                aria-modal="true"
+                aria-label="Menu de navegação"
+                className="relative z-10 flex max-h-[85vh] w-full max-w-sm flex-col overflow-hidden rounded-[28px] border border-border bg-surface/95 p-3.5 shadow-2xl backdrop-blur-xl"
+              >
+                <div className="flex items-center justify-between pb-3">
+                  <Brand />
+                  <button
+                    ref={closeButtonRef}
+                    type="button"
+                    onClick={handleNavigate}
+                    aria-label="Fechar menu"
+                    className="grid size-10 place-items-center rounded-full border border-border text-secondary transition-colors hover:bg-marsala-50 hover:text-primary"
+                  >
+                    <X className="size-5" />
+                  </button>
+                </div>
 
-              <div className="flex min-h-0 flex-1 overflow-hidden rounded-2xl border border-border bg-surface">
-                <ul className="flex max-h-[calc(100vh-16rem)] w-full flex-col gap-1 overflow-y-auto p-2">
-                  {nav.map((item) => (
-                    <li key={item.href}>
-                      <a
-                        href={item.href}
-                        onClick={handleNavigate}
-                        className="block rounded-xl px-3 py-2.5 text-[15px] font-medium text-secondary transition-colors hover:bg-marsala-50 hover:text-primary"
-                      >
-                        {item.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                <div className="flex min-h-0 flex-1 overflow-hidden rounded-2xl border border-border bg-surface">
+                  <ul className="flex w-full flex-col gap-1 overflow-y-auto p-2">
+                    {nav.map((item) => (
+                      <li key={item.href}>
+                        <a
+                          href={item.href}
+                          onClick={handleNavigate}
+                          className="block rounded-xl px-3 py-2.5 text-[15px] font-medium text-secondary transition-colors hover:bg-marsala-50 hover:text-primary"
+                        >
+                          {item.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-              <div className="mt-3">
-                <WhatsAppCta
-                  size="md"
-                  className="w-full"
-                  onClick={handleNavigate}
-                >
-                  Agendar no WhatsApp
-                </WhatsAppCta>
-              </div>
-            </motion.div>
+                <div className="mt-3">
+                  <WhatsAppCta
+                    size="md"
+                    className="w-full"
+                    onClick={handleNavigate}
+                  >
+                    Agendar no WhatsApp
+                  </WhatsAppCta>
+                </div>
+              </motion.div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
