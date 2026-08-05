@@ -15,7 +15,8 @@ export function FinalCta() {
               aria-hidden
               className="pointer-events-none absolute -left-16 -top-16 size-72 rounded-full bg-marsala-400/25 blur-3xl"
             />
-            <div className="relative p-8 sm:p-12 lg:p-16">
+
+            <div className="relative order-2 p-8 sm:p-12 lg:p-16 md:order-1">
               <h2 className="font-serif text-3xl font-semibold leading-tight text-nude-50 sm:text-4xl">
                 Comece agora a sua jornada de transformação.
               </h2>
@@ -29,9 +30,9 @@ export function FinalCta() {
               </div>
             </div>
 
-            <div className="relative min-h-[320px] md:min-h-[460px]">
+            <div className="relative order-1 min-h-[320px] w-full md:order-2 md:min-h-[460px]">
               <Image
-                src="/img/bruna-cta.jpg"
+                src="/img/bruna-cta.png"
                 alt="Bruna Alves sorrindo, pronta para atender"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"

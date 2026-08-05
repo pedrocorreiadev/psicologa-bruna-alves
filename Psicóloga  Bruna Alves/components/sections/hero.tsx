@@ -27,7 +27,7 @@ export function Hero() {
       </div>
 
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 md:grid-cols-2 lg:gap-16">
-        <div>
+        <div className="order-2 md:order-1">
           <Reveal>
             <Eyebrow>{site.role}</Eyebrow>
           </Reveal>
@@ -71,8 +71,8 @@ export function Hero() {
           </Reveal>
         </div>
 
-        <Reveal variant="scale" className="relative">
-          <div className="relative mx-auto max-w-md">
+        <Reveal variant="scale" className="relative order-1 md:order-2">
+          <div className="relative mx-auto w-full max-w-none md:max-w-md">
             {/* Camada de profundidade atrás da foto */}
             <div
               aria-hidden
@@ -80,13 +80,13 @@ export function Hero() {
             />
             <div className="relative overflow-hidden rounded-[2rem] shadow-lg ring-1 ring-black/5">
               <Image
-                src="/img/bruna-hero.jpg"
+                src="/img/image-hero.png"
                 alt="Bruna Alves, psicóloga, em seu consultório com expressão acolhedora"
                 width={1080}
                 height={1440}
                 priority
-                sizes="(max-width: 768px) 90vw, 420px"
-                className="aspect-[3/4] w-full object-cover"
+                sizes="(max-width: 768px) 100vw, 420px"
+                className="aspect-[3/4] w-full object-cover object-[center_16%]"
               />
             </div>
 

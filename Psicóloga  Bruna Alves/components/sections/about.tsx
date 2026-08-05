@@ -18,12 +18,12 @@ export function About() {
             />
             <div className="relative overflow-hidden rounded-[2rem] shadow-md ring-1 ring-black/5">
               <Image
-                src="/img/bruna-sobre.jpg"
+                src="/img/bruna-sobre.jpeg"
                 alt="Retrato de Bruna Alves em tom sereno e reflexivo"
                 width={1080}
                 height={1440}
                 sizes="(max-width: 768px) 90vw, 420px"
-                className="aspect-[3/4] w-full object-cover"
+                className="aspect-[3/4] w-full object-cover object-[center_12%]"
               />
             </div>
           </div>
@@ -47,8 +47,8 @@ export function About() {
           <Reveal delay={0.15}>
             <p className="mt-4 text-lg leading-relaxed text-muted">
               Cada pessoa carrega histórias, emoções, inseguranças e desafios
-              únicos — e meu propósito é oferecer um espaço acolhedor, seguro
-              e sem julgamentos para cada uma delas.
+              únicos — e meu propósito é oferecer um espaço acolhedor, seguro e
+              sem julgamentos para cada uma delas.
             </p>
           </Reveal>
 

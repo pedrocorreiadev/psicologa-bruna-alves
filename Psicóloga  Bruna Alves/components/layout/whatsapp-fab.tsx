@@ -29,7 +29,7 @@ export function WhatsAppFab() {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.6, y: 20 }}
           transition={{ type: "spring", stiffness: 260, damping: 20 }}
-          className="animate-soft-pulse fixed bottom-5 right-5 z-50 grid size-14 place-items-center rounded-full bg-primary text-on-primary shadow-marsala transition-colors hover:bg-primary-hover"
+          className="animate-soft-pulse fixed bottom-5 right-5 z-30 grid size-14 place-items-center rounded-full bg-primary text-on-primary shadow-marsala transition-colors hover:bg-primary-hover"
         >
           <WhatsAppIcon className="size-7" />
         </motion.a>

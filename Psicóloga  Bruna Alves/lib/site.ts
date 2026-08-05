@@ -18,7 +18,7 @@ export const site = {
   whatsappMessage: "Olá Bruna! Vim pelo site e gostaria de agendar uma sessão.",
   instagram: "https://instagram.com/psi.brunaalvess",
   instagramHandle: "@psi.brunaalvess",
-  ogImage: "/img/bruna-hero.jpg",
+  ogImage: "/img/image-hero.png",
 } as const;
 
 /** Link do WhatsApp já com mensagem pré-preenchida e codificada. */
