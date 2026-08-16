@@ -1,12 +1,5 @@
 import type { Variants, Transition } from "framer-motion";
 
-/**
- * Variantes de animação reutilizáveis (Framer Motion).
- * Movimento sutil e elegante — nunca exagerado. Deslocamentos curtos,
- * durações curtas e easing suave. `prefers-reduced-motion` é respeitado
- * pelo componente <Reveal /> e pelo CSS global.
- */
-
 const easeOut: Transition["ease"] = [0.22, 1, 0.36, 1];
 
 export const fadeUp: Variants = {
@@ -43,7 +36,6 @@ export const blurReveal: Variants = {
   },
 };
 
-/** Container para efeito stagger nos filhos (usar com <Reveal variant="stagger">). */
 export const staggerContainer: Variants = {
   hidden: {},
   show: {

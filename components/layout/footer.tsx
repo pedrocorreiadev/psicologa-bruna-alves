@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Instagram, MapPin } from "lucide-react";
+import { Share2, MapPin } from "lucide-react";
 
 import { nav, site, whatsappUrl } from "@/lib/site";
 import { Brand } from "@/components/layout/brand";
@@ -61,7 +61,7 @@ export function Footer() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 transition-colors hover:text-nude-50"
               >
-                <Instagram className="size-4" strokeWidth={1.75} />
+                <Share2 className="size-4" strokeWidth={1.75} />
                 {site.instagramHandle}
               </a>
             </li>

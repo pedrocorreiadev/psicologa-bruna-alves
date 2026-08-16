@@ -1,10 +1,5 @@
 import { faqs, site, whatsappUrl } from "@/lib/site";
 
-/**
- * Dados estruturados (schema.org) para rich results:
- * - Psychologist / ProfessionalService (perfil profissional)
- * - FAQPage (perguntas frequentes)
- */
 export function JsonLd() {
   const profile = {
     "@context": "https://schema.org",
