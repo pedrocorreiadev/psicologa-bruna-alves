@@ -16,8 +16,9 @@ export const site = {
   whatsappNumber: "556892204499",
   whatsappDisplay: "(68) 92204-499",
   whatsappMessage: "Olá Bruna! Vim pelo site e gostaria de agendar uma sessão.",
-  instagram: "https://instagram.com/psi.brunaalvess",
-  instagramHandle: "@psi.brunaalvess",
+  instagram:
+    "https://www.instagram.com/psi.brunnaalvess?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+  instagramHandle: "@psi.brunnaalvess",
   ogImage: "/img/image-hero.png",
 } as const;
 
