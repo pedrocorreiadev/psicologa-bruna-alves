@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* ============================================================
+/* 
    DESIGN SYSTEM — Bruna Alves · Psicóloga
    Paleta obrigatória da cliente:
    · Marsala   #955251  → primária, CTAs, links ativos, destaques
@@ -8,7 +8,7 @@
    · Nude      #F3D9C1  → fundos, cards, seções, áreas de respiro
    Tons derivados abaixo cobrem hover/active/disabled/gradients/
    sombras/overlays/bordas — todos dentro da mesma identidade.
-   ============================================================ */
+  */
 :root {
   /* Marca — Marsala */
   --marsala-50: #f7ecec;
@@ -176,7 +176,6 @@
     text-wrap: pretty;
   }
 
-  /* Foco visível — acessibilidade (WCAG 2.4.7) */
   :focus-visible {
     outline: 3px solid var(--color-ring);
     outline-offset: 3px;
@@ -189,7 +188,6 @@
   }
 }
 
-/* Textura orgânica sutil de fundo — sensação de profundidade/leveza */
 .bg-grain {
   background-image:
     radial-gradient(
@@ -204,7 +202,6 @@
     );
 }
 
-/* Gradiente de marca reutilizável */
 .text-gradient-marsala {
   background: linear-gradient(120deg, var(--marsala), var(--castanho));
   -webkit-background-clip: text;
@@ -212,14 +209,12 @@
   color: transparent;
 }
 
-/* Vidro leve (glassmorphism) para header/cards quando fizer sentido */
 .glass {
   background: color-mix(in srgb, var(--surface) 72%, transparent);
   backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
 }
 
-/* Animação do accordion (Radix) sem dependências extras */
 @keyframes accordion-down {
   from {
     height: 0;

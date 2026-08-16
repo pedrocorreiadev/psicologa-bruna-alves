@@ -3,7 +3,6 @@ import * as React from "react";
 import { site } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
-/** Marca / logotipo — monograma + nome. Reutilizado no header e footer. */
 export function Brand({
   variant = "default",
   className,

@@ -46,6 +46,18 @@ export function About() {
           </Reveal>
           <Reveal delay={0.15}>
             <p className="mt-4 text-lg leading-relaxed text-muted">
+              Sou natural do interior de Porto Acre, no Acre, e desde muito
+              jovem sonhava em seguir uma profissão que me permitisse cuidar de
+              pessoas. Iniciei a faculdade de Psicologia aos 17 anos e me formei
+              aos 21, após uma trajetória marcada por muitos desafios. Durante a
+              graduação, enfrentei as dificuldades da pandemia, momentos de
+              incerteza, dúvidas e obstáculos que colocaram minha perseverança à
+              prova. Ainda assim, nunca desisti do meu propósito e consegui
+              concluir essa etapa com muita dedicação e determinação.
+            </p>
+          </Reveal>
+          <Reveal delay={0.15}>
+            <p className="mt-4 text-lg leading-relaxed text-muted">
               Cada pessoa carrega histórias, emoções, inseguranças e desafios
               únicos — e meu propósito é oferecer um espaço acolhedor, seguro e
               sem julgamentos para cada uma delas.

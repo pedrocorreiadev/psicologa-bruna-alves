@@ -13,25 +13,12 @@ type MotionDivProps = Omit<
 
 type RevealProps = {
   variant?: RevealVariant;
-  /** Renderiza como item de um <RevealGroup> (herda o stagger do container). */
   asItem?: boolean;
   delay?: number;
   className?: string;
   children: React.ReactNode;
 } & MotionDivProps;
 
-/**
- * Revelação ao rolar (Framer Motion).
- *
- * Renderiza SEMPRE um `motion.div` com `initial="hidden"` — o tipo do elemento e
- * o markup inicial são idênticos no servidor e no cliente, então não há hydration
- * mismatch. A animação só ocorre no cliente, quando o elemento entra na viewport
- * (`whileInView`), disparada uma única vez.
- *
- * A preferência de "menos movimento" é tratada globalmente por
- * `<MotionConfig reducedMotion="user">` (ver app/providers.tsx) — não há
- * ramificação de render aqui.
- */
 export function Reveal({
   variant = "fade-up",
   asItem = false,
