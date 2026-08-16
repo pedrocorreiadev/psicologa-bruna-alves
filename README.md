@@ -1,11 +1,7 @@
 # Bruna Alves — Psicóloga Clínica
 
-Site institucional premium (landing page) da psicóloga clínica **Bruna Alves** —
+Site institucional (landing page) da psicóloga clínica **Bruna Alves** —
 Terapia Cognitivo-Comportamental (TCC), aplicadora ABA/DENVER e Neuropsicologia.
-
-Redesign completo com foco em **acolhimento, elegância e autoridade**, construído
-sobre a paleta de marca da cliente. O conteúdo institucional foi 100% preservado;
-apenas a forma (UI/UX, performance, acessibilidade e SEO) foi elevada.
 
 ## Stack
 
@@ -35,12 +31,6 @@ mesma identidade. Contraste de texto validado para **WCAG AA**.
 
 - **Títulos:** Playfair Display (serif, elegante/editorial)
 - **Corpo & botões:** Inter
-
-### Tokens
-
-Raios (`--radius-sm…2xl`, cards em 18–24px), sombras quentes suaves
-(`--shadow-soft/md/lg/marsala`), espaçamento generoso e uma variante de vidro leve
-(`.glass`) para header e cards.
 
 ## Estrutura
 
