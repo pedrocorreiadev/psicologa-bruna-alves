@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 
 import { site } from "@/lib/site";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -93,6 +94,7 @@ export default function RootLayout({
         </a>
         <Providers>{children}</Providers>
         <JsonLd />
+        <Analytics />
       </body>
     </html>
   );
