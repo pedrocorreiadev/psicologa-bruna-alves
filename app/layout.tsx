@@ -41,6 +41,10 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: site.name }],
   creator: site.name,
+  icons: {
+    icon: [{ url: "/favicon.ico.png", type: "image/png" }],
+    shortcut: [{ url: "/favicon.ico.png", type: "image/png" }],
+  },
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",

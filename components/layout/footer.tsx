@@ -1,7 +1,7 @@
 import * as React from "react";
 import { MapPin } from "lucide-react";
 
-import { nav, site, whatsappUrl } from "@/lib/site";
+import { site, whatsappUrl } from "@/lib/site";
 import { Brand } from "@/components/layout/brand";
 import { WhatsAppIcon } from "@/components/primitives/icons";
 
@@ -10,8 +10,8 @@ export function Footer() {
 
   return (
     <footer className="bg-castanho-800 text-nude-200/75">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-3">
-        <div className="max-w-xs">
+      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-[minmax(0,1fr)_minmax(18rem,0.72fr)] md:items-start md:gap-16">
+        <div className="max-w-md">
           <Brand variant="onDark" />
           <p className="mt-5 text-sm leading-relaxed">
             {site.role} — {site.crp}.
@@ -20,29 +20,11 @@ export function Footer() {
           </p>
         </div>
 
-        <nav aria-label="Rodapé">
-          <h2 className="mb-4 font-serif text-base font-semibold text-nude-50">
-            Navegação
-          </h2>
-          <ul className="space-y-2.5 text-sm">
-            {nav.map((item) => (
-              <li key={item.href}>
-                <a
-                  href={item.href}
-                  className="transition-colors hover:text-nude-50"
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        <div>
+        <div className="max-w-sm md:justify-self-end md:text-right">
           <h2 className="mb-4 font-serif text-base font-semibold text-nude-50">
             Contato
           </h2>
-          <ul className="space-y-3 text-sm">
+          <ul className="flex flex-col gap-3 text-sm md:items-end">
             <li>
               <a
                 href={whatsappUrl}
