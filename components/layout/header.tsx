@@ -10,17 +10,35 @@ import { Brand } from "@/components/layout/brand";
 import { WhatsAppCta } from "@/components/primitives/whatsapp-cta";
 
 export function Header() {
-  const [scrolled, setScrolled] = React.useState(false);
   const [open, setOpen] = React.useState(false);
+  const [hidden, setHidden] = React.useState(false);
+  const visible = open || !hidden;
   const menuButtonRef = React.useRef<HTMLButtonElement>(null);
   const closeButtonRef = React.useRef<HTMLButtonElement>(null);
 
   React.useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 16);
-    onScroll();
+    let previousScrollY = Math.max(0, window.scrollY);
+
+    const onScroll = () => {
+      const scrollY = Math.max(0, window.scrollY);
+      const delta = scrollY - previousScrollY;
+
+      if (open || scrollY <= 16) {
+        setHidden(false);
+        previousScrollY = scrollY;
+        return;
+      }
+
+      // Ignore small movements to keep the menu from flickering.
+      if (Math.abs(delta) < 4) return;
+
+      setHidden(delta > 0);
+      previousScrollY = scrollY;
+    };
+
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [open]);
 
   React.useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
@@ -69,20 +87,18 @@ export function Header() {
   };
 
   return (
-    <header
-      className={cn(
-        "fixed inset-x-0 top-0 z-40 transition-all duration-300",
-        scrolled ? "py-2" : "py-3",
-      )}
-    >
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+    <header className="pointer-events-none fixed inset-x-0 top-0 z-50 py-2">
+      <div
+        inert={!visible}
+        className={cn(
+          "mx-auto max-w-6xl px-4 transition-[transform,opacity] duration-300 ease-out sm:px-6 motion-reduce:transition-none",
+          visible
+            ? "pointer-events-auto translate-y-0 opacity-100"
+            : "pointer-events-none -translate-y-[calc(100%+1rem)] opacity-0",
+        )}
+      >
         <nav
-          className={cn(
-            "flex h-16 items-center justify-between rounded-full px-3 pl-4 transition-all duration-300",
-            scrolled
-              ? "glass border border-border shadow-soft"
-              : "border border-transparent",
-          )}
+          className="flex h-16 items-center justify-between rounded-full border border-border bg-surface/95 px-3 pl-4 shadow-soft backdrop-blur-md"
           aria-label="Navegação principal"
         >
           <Brand />
@@ -122,7 +138,7 @@ export function Header() {
         {open && (
           <motion.div
             id="mobile-menu"
-            className="fixed inset-0 z-[70] md:hidden p-4"
+            className="pointer-events-auto fixed inset-0 z-[70] md:hidden p-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
